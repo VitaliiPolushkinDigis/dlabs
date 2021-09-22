@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { userService } from '../../services/user.service';
 
 const Login = (props) => {
-  //logout bvefore load page
   const [state, setState] = useState({
     username: '',
     email: '',
@@ -25,7 +24,6 @@ const Login = (props) => {
 
     const { password, email } = state;
 
-    //if invalid form returnn
     if (!(email && password)) {
       return;
     }
@@ -42,6 +40,9 @@ const Login = (props) => {
       }
     );
   };
+  useEffect(() => {
+    userService.logout();
+  }, []);
   const { password, submitted, loading, error, email } = state;
   return (
     <div>
@@ -52,20 +53,16 @@ const Login = (props) => {
       </div>
       <h2>Login</h2>
       <form name='form' onSubmit={handleSubmit}>
-        <div
-          className={'form-group' + (submitted && !email ? ' has-error' : '')}
-        >
+        <div className=''>
           <label htmlFor='email'>Email</label>
           <input
             type='text'
-            className='form-control'
+            className=''
             name='email'
             value={email}
             onChange={handleChange}
           />
-          {submitted && !email && (
-            <div className='help-block'>Email is required</div>
-          )}
+          {submitted && !email && <div className=''>Email is required</div>}
         </div>
         <div
           className={
@@ -75,17 +72,17 @@ const Login = (props) => {
           <label htmlFor='password'>Password</label>
           <input
             type='password'
-            className='form-control'
+            className=''
             name='password'
             value={password}
             onChange={handleChange}
           />
           {submitted && !password && (
-            <div className='help-block'>Password is required</div>
+            <div className=''>Password is required</div>
           )}
         </div>
-        <div className='form-group'>
-          <button className='btn btn-primary' disabled={loading}>
+        <div className=''>
+          <button className='' disabled={loading}>
             Login
           </button>
           {loading && (
@@ -95,7 +92,7 @@ const Login = (props) => {
             />
           )}
         </div>
-        {error && <div className={'alert alert-danger'}>{error}</div>}
+        {error && <div>{error}</div>}
       </form>
     </div>
   );

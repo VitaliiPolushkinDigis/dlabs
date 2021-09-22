@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className='App'>
       <Router>
-        <div>
+        <div className='app__routers'>
           <PrivateRoute exact path='/' component={Home} />
           <Route path='/login' render={(props) => <Login {...props} />} />
         </div>

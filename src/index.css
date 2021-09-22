@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  overflow-x: hidden;
+}
+.App .window {
+  background-image: url('./icons/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.App .window > div {
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text {
+  text-align: center;
+}
+
+.window__area {
+  display: flex;
+  justify-content: center;
+}
+.window__area button {
+  width: 16px;
+  height: 16px;
+  background: rgb(226, 56, 56);
+  border-radius: 50%;
+  border: none;
+  margin-right: 6px;
+}
+.window__area button:nth-child(2n) {
+  background: rgb(209, 195, 73);
+}
+.window__area button:nth-child(3n) {
+  background: rgb(50, 192, 50);
+}
+.title__bar {
+  align-items: center;
+}
+.title__bar > div {
+  justify-content: flex-start;
+  width: 100% !important;
+}
+.doc__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.doc__wrapper .doc {
+  background: #cbcbcb;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.doc__wrapper .doc .doc__item {
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+}
+
+controll__wrapper {
+  position: relative;
+}
+.controll {
+  position: absolute;
+  margin-left: 4px;
+}
