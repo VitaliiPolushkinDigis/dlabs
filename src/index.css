@@ -159,10 +159,6 @@ ul {
 .gallery .pages {
   padding: 10px;
   display: flex;
-  /* position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%); */
 }
 .btn-prev {
   position: absolute;
