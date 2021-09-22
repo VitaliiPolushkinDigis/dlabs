@@ -8,7 +8,7 @@ import WindowArea from '../WindowArea';
 const Home = () => {
   const history = useHistory();
   const [user, setUser] = useState({});
-  console.log(user);
+
   const [currentApp, setCurrentApp] = useState(null);
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem('user')));

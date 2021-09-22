@@ -16,7 +16,6 @@ export default function WebCam({ setCurrentApp }) {
         controls
         isFullscreen={isFullscreen}
         onCloseClick={() => setCurrentApp(null)}
-        onMinimizeClick={() => console.log('Minimize window')}
         onMaximizeClick={() => setIsFullscreen(!isFullscreen)}
         onResizeClick={() => setIsFullscreen(!isFullscreen)}
       />
