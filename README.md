@@ -18,21 +18,20 @@ https://github.com/VitaliiPolushkinDigis/dlabs.git
 
 The next thing will be to install all the dependencies of the project.
 
-````sh
+# Download dependencies
+
 npm i
-```### 1.3 Launch and discover
 
-You are now ready to launch the application using the command below.
+# Start the application
 
-```sh
-npm run start
-````
+npm start
 
 You can now head to `http://localhost:3000/` and see the SPA.
 
 ## 2. Project goals
 
 The goal of this project is to provide SPA for a test task.
+
 :white_check_mark: Desktop
 
 :white_check_mark: Authentication
