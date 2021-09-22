@@ -1,6 +1,7 @@
 import React from 'react';
 import WebCam from '../WebCam';
-import webcam from '../../icons/webcam.png';
+
+import Gallery from '../Gallery';
 
 export default function Dock({ setCurrentApp }) {
   const apps = [
@@ -8,6 +9,11 @@ export default function Dock({ setCurrentApp }) {
       title: 'WebCam',
       icon: 'webcam',
       content: () => <WebCam setCurrentApp={setCurrentApp} />,
+    },
+    {
+      title: 'Gallery',
+      icon: 'gallery',
+      content: () => <Gallery setCurrentApp={setCurrentApp} />,
     },
   ];
 
@@ -27,7 +33,7 @@ export default function Dock({ setCurrentApp }) {
               className=''
               width='30px'
               height='30px'
-              src={webcam}
+              src={`/images/${app.icon}.png`}
               alt={app.title}
             />
           </li>

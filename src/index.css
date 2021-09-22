@@ -23,7 +23,8 @@ ul {
 .App .window {
   background-image: url('./icons/bg.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 1920px 1080px;
+  position: fixed;
 }
 .App .window > div {
   width: 100%;
@@ -39,26 +40,15 @@ ul {
   display: flex;
   justify-content: center;
 }
-.window__area button {
-  width: 16px;
-  height: 16px;
-  background: rgb(226, 56, 56);
-  border-radius: 50%;
-  border: none;
-  margin-right: 6px;
-}
-.window__area button:nth-child(2n) {
-  background: rgb(209, 195, 73);
-}
-.window__area button:nth-child(3n) {
-  background: rgb(50, 192, 50);
-}
 .title__bar {
   align-items: center;
 }
 .title__bar > div {
   justify-content: flex-start;
   width: 100% !important;
+}
+.title__bar > div:last-child {
+  text-align: left !important;
 }
 .doc__wrapper {
   width: 100%;
@@ -70,18 +60,25 @@ ul {
   padding: 10px 20px;
   border-radius: 10px;
 }
+.doc__wrapper .doc ul {
+  display: flex;
+}
 .doc__wrapper .doc .doc__item {
   cursor: pointer;
   align-items: center;
   display: flex;
+  margin-right: 10px;
 }
-
-controll__wrapper {
+.doc__wrapper .doc .doc__item:last-child {
+  margin-right: 0;
+}
+.controll__wrapper {
   position: relative;
+  width: 80vw !important;
 }
 .controll {
-  position: absolute;
-  margin-left: 4px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .login__wrapper {
@@ -112,4 +109,88 @@ controll__wrapper {
 }
 .login button:hover {
   transform: translateY(3px);
+}
+
+.gallery {
+  width: 100%;
+}
+.gallery .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 20px 30px;
+  gap: 20px;
+  border: 1px solid white;
+  border-top: none;
+  overflow-y: scroll;
+  max-height: 80vh;
+  background: #f6f6f6;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.gallery .list::-webkit-scrollbar {
+  width: 20px;
+}
+
+.gallery .list::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.gallery .list::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-image: linear-gradient(180deg, #d0368a 0%, #708ad4 99%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+}
+.gallery .list .item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.gallery .list .item__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.gallery .pages {
+  padding: 10px;
+  display: flex;
+  /* position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); */
+}
+.btn-prev {
+  position: absolute;
+  left: 10%;
+  bottom: 10px;
+}
+.btn-next {
+  position: absolute;
+  right: 10%;
+  bottom: 10px;
+}
+.btn {
+  padding: 4px 8px;
+  background: linear-gradient(90deg, #d0368a 0%, #708ad4 99%);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.btn:first-child {
+  margin-right: 20px;
+}
+.page {
+  font-weight: 600;
+  left: 50%;
+  bottom: 10px;
+  position: absolute;
+}
+.disabled {
+  cursor: initial;
+  background: gray;
 }

@@ -8,7 +8,7 @@ export default function WindowArea({ currentApp }) {
   return (
     <Draggable>
       <div className='controll__wrapper'>
-        <div className=''>
+        <div className='controll'>
           {currentApp.content?.() ?? `I'm ${currentApp.title} app`}
         </div>
       </div>
